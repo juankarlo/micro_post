@@ -34,15 +34,23 @@ group :development, :test do
   gem 'guard'
   gem 'spork'
   #gem 'rspec'
+  gem 'capybara'
+
   gem 'rspec-rails'
   gem 'rspec-expectations'
   gem 'guard-rspec'
   gem 'guard-rails'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
   gem 'guard-spork'
 end
 
 group :test do
   # gem 'cucumber'
-  gem 'capybara'
+  gem 'cucumber-rails', require: false
+
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'email_spec'
 end
+
