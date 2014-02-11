@@ -23,7 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-expectations'
   gem 'guard'
-  gem 'guard-rspec'
+  gem 'guard-rspec','~> 4.2.6', require: false
   gem 'guard-rails'
   gem 'guard-livereload', require: false
   gem 'rack-livereload'

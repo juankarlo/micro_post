@@ -3,13 +3,13 @@ require 'spork'
 require 'factory_girl_rails'
 
 Spork.prefork do
-   ENV["RAILS_ENV"] ||= 'test'
+  ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   #require 'email_spec'
   require 'capybara/rails'
-  #require 'capybara/rspec'
-   require 'rspec/autorun'
+  require 'capybara/rspec'
+  require 'rspec/autorun'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -25,8 +25,10 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.order = "random"
     config.include Capybara::DSL, :type => :request
-
-
+    # Disable the old-style object.should syntax.
+    #config.expect_with :rspec do |c|
+    #  c.syntax = :expect
+    #end
   end
 
 end
