@@ -14,6 +14,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'quiet_assets'
   gem 'sqlite3'
   gem 'spork'
