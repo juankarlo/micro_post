@@ -21,10 +21,14 @@ describe "Static Pages" do
       visit '/static_pages/help'
       page.should have_selector('h1', text: 'Help')
     end
-    it "Should have the right title" do
+    it "Should have the base title" do
       visit '/static_pages/help'
-      page.should have_title('Ruby on Rails tutorial Sample App | Help')
+      page.should have_title('Ruby on Rails tutorial Sample App')
     end
+    it "Should not have a custom page title" do
+      visit '/static_pages/help'
+      page.should_not have_title('| Help')
+      end
   end
 
   describe 'About Page' do
@@ -32,9 +36,13 @@ describe "Static Pages" do
       visit '/static_pages/about'
       page.should have_selector('h1', text: 'About Us')
     end
-    it "Should have the right title" do
+    it "Should have the base title" do
       visit '/static_pages/about'
-      page.should have_title('Ruby on Rails tutorial Sample App | About Us')
+      page.should have_title('Ruby on Rails tutorial Sample App')
+    end
+    it "Should not have a custom page title" do
+      visit '/static_pages/about'
+      page.should_not have_title('| About Us')
     end
   end
 
@@ -43,9 +51,13 @@ describe "Static Pages" do
       visit '/static_pages/contact'
       page.should have_selector('h1', text: 'Contact Us')
     end
-    it "Should have the right title" do
+    it "Should have the base title" do
       visit '/static_pages/contact'
-      page.should have_title('Ruby on Rails tutorial Sample App | Contact Us')
+      page.should have_title('Ruby on Rails tutorial Sample App')
+    end
+    it "Should not have a custom page title" do
+      visit '/static_pages/contact'
+      page.should_not have_title('| Contact Us')
     end
   end
 end
