@@ -25,9 +25,8 @@ end
 
 group :test, :development do
   gem 'sqlite3'
-  #gem 'capybara'
-  #gem 'rspec-rails', '~> 2.14.0'
-  #gem 'capybara'
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'factory_girl_rails'
   #gem 'rspec', '~> 2.14.0'
   # The following optional lines are part of the advanced setup.
   gem 'guard-rspec', require: false
@@ -42,14 +41,15 @@ group :test, :development do
 end
 
 group :test do
-  gem 'rspec-rails'
+  gem 'capybara'
+  #gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'libnotify'
-  gem 'factory_girl_rails'
+
   #gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
+  #gem 'database_cleaner'
   #gem 'email_spec'
-  gem 'capybara'
+  gem 'capybara' #, '2.1.0'
 end
 
 group :production do
