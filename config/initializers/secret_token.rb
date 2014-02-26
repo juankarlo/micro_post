@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SampleApp::Application.config.secret_key_base = '1cb7f61a0cb4586bc2ed74f501af3a7c1d166f1b32d78231647d2bf50b7a276833e0d224ebc496d9817d9ae9156503e4c65800b84e2acb85d483fffa19306e7e'
+SampleApp::Application.config.secret_key_base = Figaro.env.secret_token

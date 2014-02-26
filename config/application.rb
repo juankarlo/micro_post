@@ -36,6 +36,7 @@ module SampleApp
       g.javascripts = false
       g.helper = false
     end
+    config.web_console.style.colors = :solarized_dark
   end
 
 end
