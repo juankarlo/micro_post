@@ -24,7 +24,7 @@ module SampleApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    I18n.enforce_available_locales = false
+    I18n.enforce_available_locales = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
@@ -36,7 +36,7 @@ module SampleApp
       g.javascripts = false
       g.helper = false
     end
-    config.web_console.style.colors = :solarized_dark
+    #config.web_console.style.colors = :solarized_dark
   end
 
 end

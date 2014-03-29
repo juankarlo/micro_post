@@ -1,0 +1,15 @@
+<%= semantic_form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.inputs do %>
+        <%= f.inputs :name, :email, :password %>
+        <%= f.input :password_confirmation, label:
+                "Confirmation" %>
+    <% end %>
+    <%= f.actions do %>
+        <%= f.action :submit, as: :button, :label => "Create my Account",
+                     :button_html => {:class => "btn btn-lg btn-primary"} %>
+
+        <%= f.action :cancel, as: :link, :label => "Cancel" %>
+    <% end %>
+<% end %>
