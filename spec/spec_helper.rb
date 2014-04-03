@@ -6,7 +6,7 @@ require 'database_cleaner'
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
-  require 'capybara/rspec'
+  #require 'capybara/rspec'
   require 'rspec/rails'
   require 'rspec/autorun'
 
@@ -29,6 +29,7 @@ Spork.prefork do
     config.expect_with :rspec do |c|
       c.syntax = :expect
     end
+
     config.mock_with :rspec
 
     config.include FactoryGirl::Syntax::Methods

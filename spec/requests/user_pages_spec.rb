@@ -30,9 +30,7 @@ describe "User Pages" do
         before { click_button submit }
         it { should have_title('Sign Up') }
         it { should have_content('error') }
-
       end
-
     end
 
     describe 'With valid information' do
@@ -49,15 +47,12 @@ describe "User Pages" do
       describe 'After saving the user' do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
+
+        it { should have_link('Sign out') }
         it { should have_title(user.name) }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
-
+        #it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+        it { should have_flash_message( 'success', 'Welcome')  }
       end
-
     end
-
-
   end
-
-
 end

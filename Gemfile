@@ -35,9 +35,10 @@ group :test, :development do
   gem 'factory_girl_rails'
   # The following optional lines are part of the advanced setup.
   gem 'libnotify'
-  gem 'guard-rspec', require: false
+  gem 'guard-rspec'#, require: false
   gem 'spork-rails'
   gem 'guard-spork'
+  gem 'guard-cucumber'
   gem 'guard-rails'
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
@@ -49,7 +50,7 @@ end
 group :test do
   gem 'selenium-webdriver'
   #gem 'libnotify'
-  #gem 'capybara'
+  gem 'capybara'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'email_spec'

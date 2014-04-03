@@ -1,13 +1,23 @@
 SampleApp::Application.routes.draw do
   resources :users
-  #get "users/new"
-  root 'static_pages#home'
-  #get "static_pages/home"
-  get "/signup" => 'users#new' , as: :signup
-  get "/help" => 'static_pages#help' , as: :help
+  resources :sessions, only: [:new, :create, :destroy]
+  root to: 'static_pages#home'
+  #match '/signup',  to: 'users#new',            via: 'get'
+  #match '/signin',  to: 'sessions#new',         via: 'get'
+  #match '/signout', to: 'sessions#destroy',     via: 'delete'
+  get "/signup" => 'users#new', as: :signup
+  get "/signin" => 'sessions#new', as: :signin
+  delete "/signout" => 'sessions#destroy', as: :signout
+
+  #match '/help',    to: 'static_pages#help',    via: 'get'
+  #match '/about',   to: 'static_pages#about',   via: 'get'
+  #match '/contact', to: 'static_pages#contact', via: 'get'
+
+  get "/help" => 'static_pages#help', as: :help
   get "/about" => 'static_pages#about', as: :about
   get "/contact" => 'static_pages#contact', as: :contact
-  # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation: first created -> highest
+  # priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

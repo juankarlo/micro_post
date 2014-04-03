@@ -1,0 +1,14 @@
+<%#= semantic_form_for @sessions do |f| %>
+<%= semantic_form_for(:session, url: sessions_path) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, label: 'Sign in',
+                 button_html: {class: 'btn btn-lg btn-primary'} %>
+  <% end %>
+<% end %>
+<br/>
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>
