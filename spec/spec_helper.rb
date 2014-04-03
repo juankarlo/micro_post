@@ -79,6 +79,6 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  SampleApp::Application.reload_routes!
+  MicroPost::Application.reload_routes!
 
 end

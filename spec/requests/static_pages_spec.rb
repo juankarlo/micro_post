@@ -11,10 +11,10 @@ describe "Static Pages" do
 
   describe 'Home Page' do
     before { visit root_path }
-    #it { should have_selector('h1', text: 'Sample App') }
+    #it { should have_selector('h1', text: 'Micro Post') }
     #it { should have_title(full_title('')) }
     #it { should_not have_title('| Home') }
-    let(:heading) { 'Sample App' }
+    let(:heading) { 'Micro-Post' }
     let(:page_title) { '' }
 
     it_should_behave_like('all static pages')
@@ -63,7 +63,7 @@ describe "Static Pages" do
     click_link "Home"
     click_link "Sign up now!"
     expect(page).to have_title(full_title('Sign Up'))
-    #click_link "sample app"
+    #click_link "Micro Post"
     #expect(page).to # fill in
   end
   

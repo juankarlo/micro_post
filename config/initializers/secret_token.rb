@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SampleApp::Application.config.secret_key_base = Figaro.env.secret_token
+MicroPost::Application.config.secret_key_base = Figaro.env.secret_token
