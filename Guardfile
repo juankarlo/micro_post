@@ -8,13 +8,13 @@ guard 'spork', :cucumber_env => {'RAILS_ENV' => 'test'}, :rspec_env => {'RAILS_E
   watch(%r{^config/initializers/.+\.rb$})
   watch('Gemfile.lock')
   watch('spec/spec_helper.rb') { :rspec }
-  watch('test/test_helper.rb') { :test_unit }
-  watch(%r{features/support/}) { :cucumber }
+  #watch('test/test_helper.rb') { :test_unit }
+  #watch(%r{features/support/}) { :cucumber }
 end
 
 #guard :rspec, cmd: 'rspec --drb', all_on_start: false,
 # all_after_pass: false, failed_mode: :focus do
-guard :rspec, cmd: 'rspec --drb', all_on_start: false, all_after_pass: false, failed_mode: :focus do
+guard :rspec, cmd: 'rspec --drb', failed_mode: :focus do
   #watch(%r{^spec/.+_spec\.rb$})
   #watch(%r{^lib/(.+)\.rb$}) { |m| "spec/lib/#{m[1]}_spec.rb" }
   #watch('spec/spec_helper.rb') { "spec" }
