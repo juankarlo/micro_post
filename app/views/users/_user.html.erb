@@ -1,0 +1,9 @@
+<li>
+  <%= image_tag('rails.png', class: 'gravatar img-responsive img-circle') %>
+  <%#= gravatar_for user, size: 52 %>
+  <!--todo Change later the stub for the gravatar-->
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+      | <%= link_to 'Delete', user, method: :delete, data: {confirm: "Are you Sure?"}, class: 'btn btn-danger btn-xs' %>
+  <% end %>
+</li>

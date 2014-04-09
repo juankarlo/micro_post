@@ -90,6 +90,7 @@ p {
 //}
 
 footer {
+  height: 60px;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
@@ -181,3 +182,25 @@ aside {
 //  @extend .control-group;
 //  @extend .error;
 //}
+
+
+/* Users index*/
+
+.users{
+  list-style: none;
+  margin: 0;
+  li{
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $gray-lighter;
+    &:last-child{
+      border-bottom: 1px solid $gray-lighter;
+    }
+  }
+}
+
+.pagination{
+  @include pagination-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
+//  @include pagination-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
+}
+

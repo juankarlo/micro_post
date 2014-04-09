@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Static Pages" do
+describe 'Static Pages' do
   subject { page }
 
   shared_examples_for 'all static pages' do
@@ -52,16 +52,16 @@ describe "Static Pages" do
 
     it_should_behave_like('all static pages')
   end
-  it "should have the right links on the layout" do
+  it 'should have the right links on the layout' do
     visit root_path
-    click_link "About"
+    click_link 'About'
     expect(page).to have_title(full_title('About'))
-    click_link "Help"
+    click_link 'Help'
     expect(page).to have_title(full_title('Help'))
-    click_link "Contact"
+    click_link 'Contact'
     expect(page).to have_title(full_title('Contact Us'))
-    click_link "Home"
-    click_link "Sign up now!"
+    click_link 'Home'
+    click_link 'Sign up now!'
     expect(page).to have_title(full_title('Sign Up'))
     #click_link "Micro Post"
     #expect(page).to # fill in

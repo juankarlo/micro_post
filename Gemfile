@@ -31,7 +31,8 @@ end
 
 group :test, :development do
   gem 'sqlite3'
-  gem 'rspec-rails'
+  gem 'rspec-rails', require: false
+  gem 'spring-commands-rspec'
   gem 'factory_girl_rails'
   # The following optional lines are part of the advanced setup.
   gem 'libnotify'
