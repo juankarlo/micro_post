@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3 col-sm-4">
     <section>
       <h1>
         <%= image_tag('rails.png', class: 'gravatar img-responsive img-circle') %>
@@ -11,7 +11,7 @@
 
     </section>
   </aside>
-  <div class="col-md-8">
+  <div class="col-md-9 col-sm-8">
     <% if @user.microposts.any? %>
     <h3>Microposts (<%= @user.microposts.count %>)</h3>
         <ol class="microposts">

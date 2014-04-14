@@ -3,6 +3,7 @@ source 'http://0.0.0.0:8808'
 ruby '2.1.0'
 gem 'rails', '~>  4.0.3'
 
+gem 'heroku'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bcrypt-ruby'
 gem 'faker'
