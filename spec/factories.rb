@@ -11,4 +11,9 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :micropost do
+    content "All stars capture neutral, ancient nanomachines."
+    user
+  end
 end

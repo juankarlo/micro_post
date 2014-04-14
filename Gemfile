@@ -35,8 +35,7 @@ group :test, :development do
   gem 'spring-commands-rspec'
   gem 'factory_girl_rails'
   # The following optional lines are part of the advanced setup.
-  gem 'libnotify'
-  gem 'guard-rspec'#, require: false
+  gem 'guard-rspec' #, require: false
   gem 'spork-rails'
   gem 'guard-spork'
   gem 'guard-cucumber'
@@ -44,13 +43,15 @@ group :test, :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem 'childprocess'
+  gem 'fuubar'
+  #gem 'rspec-instafail'
   #gem 'web-console'
 end
 
 
 group :test do
   gem 'selenium-webdriver'
-  #gem 'libnotify'
+  gem 'libnotify'
   gem 'capybara'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
@@ -63,8 +64,4 @@ group :production do
   gem 'rails_12factor'
   gem 'unicorn'
 end
-
 #gem 'puma'
-##860-357-7633
-
-

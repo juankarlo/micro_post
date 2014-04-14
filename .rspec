@@ -1,2 +1,3 @@
---color
--f doc
+#-f doc
+-f Fuubar
+--color spec

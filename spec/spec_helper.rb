@@ -58,6 +58,8 @@ Spork.prefork do
     config.after(:each) do
       DatabaseCleaner.clean
     end
+
+    #config.fuubar_progress_bar_options = { :format => '%c/%C <%B> %p%% %a' }
   end
 
 

@@ -21,8 +21,13 @@
 
 en:
   formtastic:
+    placeholders:
+      micropost:
+        content: "Compose new micropost..."
     actions:
-      create: "Create my Account"
-      update: "Save changes"
-      cancel: "Cancel"
-
+      user:
+        create: "Create my Account"
+        update: "Save changes"
+        cancel: "Cancel"
+      micropost:
+        create: "Post"

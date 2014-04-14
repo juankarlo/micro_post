@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   #attr_accessor :name, :email, :password, :password_confirmation
+  has_many :microposts, dependent: :destroy
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders]
 
@@ -23,6 +24,12 @@ class User < ActiveRecord::Base
 
   def User.hash(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def feed
+    # TODO: This is a preliminary implementation of the feed method
+    Micropost.where("user_id = ?", id)
+    # Micropost.where( user_id: id)
   end
 
   private

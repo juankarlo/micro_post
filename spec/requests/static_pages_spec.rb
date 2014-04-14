@@ -19,6 +19,23 @@ describe 'Static Pages' do
 
     it_should_behave_like('all static pages')
     it { should_not have_title('| Home') }
+
+    describe "For signed-i users" do
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+FactoryGirl.create(:micropost, user: user, content: "This mystery has only been influenced by a human planet.")
+FactoryGirl.create(:micropost, user: user, content: "Make it so, interstellar advice!")
+        sign_in user
+        visit root_path
+      end
+      it "should render the user's feed" do
+        user.feed.each do |item|
+          expect(page).to have_selector("li##{item.id}", text: item.content)
+        end
+
+      end
+
+    end
   end
 
   describe 'Help Page' do
@@ -66,6 +83,6 @@ describe 'Static Pages' do
     #click_link "Micro Post"
     #expect(page).to # fill in
   end
-  
+
 
 end

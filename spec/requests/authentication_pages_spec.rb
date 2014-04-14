@@ -108,6 +108,22 @@ describe 'Authentication' do
       end
 
 
+      describe 'In the Micropost controller' do
+        describe 'Submitting to the create action' do
+          before { post microposts_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe 'Submitting to the destroy action' do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { expect(response).to redirect_to(signin_path) }
+
+        end
+
+
+      end
+
+
     end
 
     describe 'As Wrong user' do

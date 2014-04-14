@@ -54,10 +54,21 @@ describe "User Pages" do
 
   describe 'Profile page' do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "All protons transfer distant, small sonic showers.") }
+    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "I assimilate this voyage, it's called futile rumour.") }
 
     before { visit user_path(user) }
+
     it { should have_content(user.name) }
     it { should have_title(user.name) }
+
+    describe 'Microposts' do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(user.microposts.count) }
+
+    end
+
   end
 
   describe 'Signup Page' do
@@ -143,14 +154,14 @@ describe "User Pages" do
 
     describe 'Forbidden attributes' do
       let(:params) do
-        {user: { admin: true, password: user.password, password_confirmation: user.password }}
+        {user: {admin: true, password: user.password, password_confirmation: user.password}}
       end
 
       before do
         sign_in user, no_capuybara: true
         patch user_path(user), params
       end
-      specify { expect(user.reload).not_to be_admin}
+      specify { expect(user.reload).not_to be_admin }
     end
 
 
