@@ -5,7 +5,7 @@ gem 'rails', '~>  4.0.3'
 
 gem 'heroku'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'bcrypt-ruby'
+gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
 gem 'squeel'
 gem 'figaro'
 gem 'friendly_id', '~> 5.0.0'
@@ -28,6 +28,7 @@ group :development do
   gem 'brakeman', :require => false
   gem 'quiet_assets'
   gem 'pry-rails'
+  gem 'spring'
 end
 
 group :test, :development do
