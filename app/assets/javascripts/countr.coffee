@@ -7,6 +7,6 @@ $ ->
       count.addClass('over')
     else
       count.removeClass('over')
-    count.html(maxCharacters - characters + '/ ' + maxCharacters)
+    count.text(maxCharacters - characters + ' / ' + maxCharacters)
 
-  $('textarea').bind('keyup keydown click', countchars)
+  $('#micropost_content').bind('keyup keydown click', countchars)
