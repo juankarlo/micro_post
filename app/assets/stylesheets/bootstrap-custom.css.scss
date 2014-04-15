@@ -216,7 +216,7 @@ aside {
   li{
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
-    
+
   }
 }
 
@@ -224,5 +224,20 @@ aside {
   display: block;
 }
 .timestamp{
-color: $gray-light
+  color: $gray-light;
+  font-size: .9em;
+
+}
+
+//#txtarea_feedback {
+//  color: $gray-light;
+//  font-size: .9em;
+//}
+#count {
+  color: $gray-light;
+  font-size: .9em;
+}
+
+.over {
+  color: #A94442;
 }

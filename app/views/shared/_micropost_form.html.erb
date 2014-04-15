@@ -2,12 +2,14 @@
 <%#= render 'shared/error_messages', object: f.object %>
     <div class="field">
       <%= f.inputs do %>
-          <%= f.input :content, label: false, input_html: {class: 'autogrow', rows: 3} %>
-      <% end %>
+          <%= f.input :content, as: :text, label: false,
+                      input_html: {rows: 3} %>
+          <% end %>
+      <p id="txtarea_feedback"><span id="count"></span></p>
     </div>
     <%= f.actions do %>
-        <%= f.action :submit, :button_html => {:class => "btn btn-lg
-        btn-info"} %>
+        <%= f.action :submit, :button_html => {class: 'btn btn-lg
+        btn-info'} %>
     <% end %>
 <% end %>
 
