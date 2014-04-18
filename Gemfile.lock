@@ -1,5 +1,5 @@
 GEM
-  remote: http://0.0.0.0:8808/
+  remote: https://rubygems.org/
   specs:
     actionmailer (4.0.4)
       actionpack (= 4.0.4)
@@ -92,7 +92,7 @@ GEM
       mail (~> 2.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    excon (0.32.1)
+    excon (0.33.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -161,6 +161,9 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.0.2)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.1)
     kgio (2.9.2)
     launchy (2.4.2)
@@ -197,6 +200,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    puma (2.8.2)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -223,7 +228,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
-    rake (10.2.2)
+    rake (10.3.0)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -274,7 +279,7 @@ GEM
       rails (>= 3.0.0, < 5)
       spork (>= 1.0rc0)
     spring (1.1.2)
-    spring-commands-rspec (1.0.1)
+    spring-commands-rspec (1.0.2)
       spring (>= 0.9.1)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -304,7 +309,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -348,13 +353,16 @@ DEPENDENCIES
   heroku
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   libnotify
   pg
   pry-rails
+  puma
   quiet_assets
   rack-livereload
   rails (~> 4.0.3)
   rails_12factor
+  rspec (~> 2.14.0)
   rspec-rails
   sass-rails (~> 4.0.0)
   selenium-webdriver

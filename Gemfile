@@ -1,6 +1,6 @@
-source 'http://0.0.0.0:8808'
-#source 'https://rubygems.org'
-ruby '2.1.0'
+# source 'http://0.0.0.0:8808'
+source 'https://rubygems.org'
+ruby '2.1.1'
 gem 'rails', '~>  4.0.3'
 
 gem 'heroku'
@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'squeel'
 gem 'figaro'
@@ -33,6 +34,7 @@ end
 
 group :test, :development do
   gem 'sqlite3'
+  gem 'rspec', '~> 2.14.0'
   gem 'rspec-rails', require: false
   gem 'spring-commands-rspec'
   gem 'factory_girl_rails'
@@ -46,8 +48,6 @@ group :test, :development do
   gem 'rack-livereload'
   gem 'childprocess'
   gem 'fuubar'
-  #gem 'rspec-instafail'
-  #gem 'web-console'
 end
 
 
@@ -66,4 +66,4 @@ group :production do
   gem 'rails_12factor'
   gem 'unicorn'
 end
-#gem 'puma'
+gem 'puma'
