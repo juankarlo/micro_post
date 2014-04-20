@@ -1,8 +1,15 @@
 class User < ActiveRecord::Base
   #attr_accessor :name, :email, :password, :password_confirmation
   has_many :microposts, dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  # TODO: Add a test to validates the dependent: :destroy clause
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, :class_name => "Relationship",
+           :foreign_key => "followed_id", dependent: :destroy
+  # TODO: Add a test to validates the dependent: :destroy clause
+  has_many :followers, through: :reverse_relationships, source: :follower
   extend FriendlyId
-  friendly_id :slug_candidates, use: [:slugged, :finders]
+  friendly_id :slug_candidates, use: [:slugged, :finders, :history]
 
   def slug_candidates
     [:name, :email]
@@ -12,12 +19,12 @@ class User < ActiveRecord::Base
   before_create :create_remember_token
   validates :name, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX= /\A[\w+\-.]+[a-z\d\-]+@[a-z\d]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
-            uniqueness: { case_sensitive: false }
+  validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},
+            uniqueness: {case_sensitive: false}
   has_secure_password
-  #validates :password, presence: true, length: {minimum: 6}
-  #validates :password_confirmation, presence: true
-  validates :password, length: { minimum: 6 }
+
+  validates :password, length: {minimum: 6}
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -27,9 +34,20 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    # TODO: This is a preliminary implementation of the feed method
-    Micropost.where("user_id = ?", id)
-    # Micropost.where( user_id: id)
+    Micropost.from_users_followed_by(self)
+  end
+
+  def following?(other_user)
+    relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    relationships.find_by(followed_id: other_user.id).destroy
+
   end
 
   private

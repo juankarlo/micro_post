@@ -1,8 +1,7 @@
 <!--TODO: Remove Duplication in patial-->
 <li id="<%= feed_item.id %>">
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-  <!--todo Change later the stub for the gravatar-->
-  <%#= link_to image_tag('rails.png', class: 'gravatar img-responsive img-circle'), current_user %>
+  <%= link_to gravatar_for(feed_item.user, shape: 'img-rounded'),
+              feed_item.user %>
   <span class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
   </span>
@@ -16,7 +15,7 @@
       <%= link_to "Delete", feed_item, method: :delete,
                   data: { confirm: "You sure?" },
                   title: feed_item.content,
-                  class: 'btn btn-warning btn-xs' %>
+                  class: 'btn' %>
   <% end %>
 
 </li>

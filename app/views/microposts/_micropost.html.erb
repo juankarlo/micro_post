@@ -10,7 +10,7 @@
   <% if current_user?(micropost.user) %>
        <%= link_to 'Delete', micropost, method: :delete,
                    data: {confirm: 'You Sure?'}, title: micropost.content,
-                   class: 'btn btn-warning btn-xs' %>
+                   class: 'btn' %>
     <% end %>
   &#8203;
 </li>

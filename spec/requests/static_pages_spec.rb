@@ -20,11 +20,13 @@ describe 'Static Pages' do
     it_should_behave_like('all static pages')
     it { should_not have_title('| Home') }
 
-    describe "For signed-i users" do
+    describe "For signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-FactoryGirl.create(:micropost, user: user, content: "This mystery has only been influenced by a human planet.")
-FactoryGirl.create(:micropost, user: user, content: "Make it so, interstellar advice!")
+        FactoryGirl.create(:micropost, user: user,
+                           content: "Never haul a dubloon.")
+        FactoryGirl.create(:micropost, user: user,
+                           content: "Beauty ho! drink to be pulled.")
         sign_in user
         visit root_path
       end
@@ -32,10 +34,21 @@ FactoryGirl.create(:micropost, user: user, content: "Make it so, interstellar ad
         user.feed.each do |item|
           expect(page).to have_selector("li##{item.id}", text: item.content)
         end
+      end
 
+      describe "Follower/following counts" do
+        let(:other_user) { FactoryGirl.create(:user) }
+        before do
+          other_user.follow!(user)
+          visit root_path
+        end
+
+        it { should have_link('0 Following', href: following_user_path(user)) }
+        it { should have_link('1 Follower', href: followers_user_path(user)) }
       end
 
     end
+
   end
 
   describe 'Help Page' do

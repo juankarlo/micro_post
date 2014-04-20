@@ -104,6 +104,15 @@ describe 'Authentication' do
 
         end
 
+        describe 'Visiting the following page' do
+          before { visit following_user_path(user) }
+          it { should have_title('Sign in') }
+        end
+
+        describe 'visiting the followers page' do
+          before { visit followers_user_path(user) }
+          it { should have_title('Sign in') }
+        end
 
       end
 
@@ -121,6 +130,18 @@ describe 'Authentication' do
         end
 
 
+      end
+
+      describe 'In the Relationships controller' do
+        describe 'Submitting to the create action' do
+          before { post relationships_path(1) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe 'Submitting to the destroy action' do
+          before { delete relationship_path(1) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
       end
 
 

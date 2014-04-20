@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://0.0.0.0:8808/
   specs:
     actionmailer (4.0.4)
       actionpack (= 4.0.4)
@@ -107,7 +107,7 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
-    formtastic (2.3.0.rc2)
+    formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
     formtastic-bootstrap (3.0.0)
       formtastic (>= 2.2)
@@ -341,7 +341,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
-  formtastic (= 2.3.0.rc2)
+  formtastic (= 2.3.0.rc3)
   formtastic-bootstrap
   friendly_id (~> 5.0.0)
   fuubar

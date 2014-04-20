@@ -1,0 +1,5 @@
+<%= semantic_form_for(current_user.relationships.build(followed_id: @user.id), remote: true) do |f| %>
+    <div><%= f.input :followed_id, as: :hidden %></div>
+    <%= f.action :submit, label: "Follow", :button_html => {:class => "btn btn-xs
+        btn-primary"} %>
+<% end %>

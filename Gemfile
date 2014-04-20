@@ -1,6 +1,7 @@
-# source 'http://0.0.0.0:8808'
-source 'https://rubygems.org'
+source 'http://0.0.0.0:8808'
+# source 'https://rubygems.org'
 ruby '2.1.1'
+##ruby-gemset=micro_post
 gem 'rails', '~>  4.0.3'
 
 gem 'heroku'
@@ -20,7 +21,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'squeel'
 gem 'figaro'
 gem 'friendly_id', '~> 5.0.0'
-gem 'formtastic', '2.3.0.rc2'
+gem 'formtastic', '2.3.0.rc3'
 gem 'formtastic-bootstrap'
 
 group :development do

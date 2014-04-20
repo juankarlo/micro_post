@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'spork'
 require 'factory_girl_rails'
+require 'factory_girl'
 require 'database_cleaner'
 
 Spork.prefork do
@@ -23,8 +24,8 @@ Spork.prefork do
     config.order = "random"
     # Include the Capybara DSL so that specs in spec/requests still work.
     config.include Capybara::DSL, :type => :request
-    config.include Capybara::RSpecMatchers, type: :request
-    config.include RSpec::Core::DSL, type: :request
+    # config.include Capybara::RSpecMatchers, type: :request
+    # config.include RSpec::Core::DSL, type: :request
     # Disable the old-style object.should syntax.
     config.expect_with :rspec do |c|
       c.syntax = :expect
