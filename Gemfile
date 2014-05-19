@@ -49,6 +49,7 @@ group :test, :development do
   gem 'rack-livereload'
   gem 'childprocess'
   gem 'fuubar'
+  gem 'simplecov'
 end
 
 
